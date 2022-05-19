@@ -1,0 +1,1211 @@
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily:"Gotham-Book";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&display=swap');
+@font-face {
+    font-family: 'Gotham-Bold';
+    src: local('Gotham Bold'), local('Gotham-Bold'),
+        url('../fonts/Gotham-Bold.woff2') format('woff2'),
+        url('../fonts/Gotham-Bold.woff') format('woff'),
+        url('../fonts/Gotham-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Gotham-Medium';
+    src: local('Gotham Medium'), local('Gotham-Medium'),
+        url('../fonts/Gotham-Medium.woff2') format('woff2'),
+        url('../fonts/Gotham-Medium.woff') format('woff'),
+        url('../fonts/Gotham-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Gotham-Book';
+    src: local('Gotham Book'), local('Gotham-Book'),
+        url('../fonts/Gotham-Book.woff2') format('woff2'),
+        url('../fonts/Gotham-Book.woff') format('woff'),
+        url('../fonts/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Myriad Pro Regular';
+    src: url('../fonts/MyriadPro-Regular.eot');
+    src: url('../fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MyriadPro-Regular.woff') format('woff'),
+    url('../fonts/MyriadPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth:320px;
+$mw:1170;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+*{padding: 0px;margin: 0px;border: 0px;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+aside,nav,footer,header,section{display: block;}
+html,body{height: 100%;margin: 0;padding: 0;min-width: $minwidth;position: relative;width: 100%;color: #000;}
+body{font-size: 100%;line-height: 1;font-size: 14px;font-family: $fontfamily;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;
+	&.lock{overflow: hidden;
+		@media (max-width:$md3+px){
+			width: 100%;
+			position: fixed;
+			overflow: hidden;
+		}
+	}
+}
+input,button,textarea{font-family: $fontfamily;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+
+.container{max-width:$mw+px;margin: 0 auto;width: 100%;
+	@media (max-width:$md1+px){max-width: 970px;}
+	@media (max-width:$md2+px){max-width: 750px;}
+	@media (max-width:$md3+px){max-width: none;padding:0 10px;}
+	@media (max-width:$md4+px){max-width: none;padding:0 10px;}
+}
+.wrapper {
+	background: url(../Img/header/background.jpg)no-repeat;
+	background-size: cover;
+}
+.container {
+}
+.header {
+
+		&__menu {
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 0 200px 0;
+			@media (max-width:$md2+px){
+				padding: 5px 0 50px 0;
+			}
+			@media (max-width:$md4+px){
+				padding: 5px 0 10px 0;
+			}
+		}
+
+		&__menu-logo {
+			img{
+				@media (max-width:$md2+px){
+					width: 50px;
+					height: 50px;
+				}
+				@media (max-width:$md4+px){
+					width: 30px;
+					height: 30px;
+				}
+			}
+			
+		}
+
+		&__menu-icon-img {
+			
+		}
+
+		&__menu-nav {
+			
+		}
+
+		&__menu-nav-list {
+			display: flex;
+			justify-content: space-between;
+			a{
+				position: relative;
+				line-height: 10px;
+				&::after{
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 150%;
+					width: 0;
+					height: 6px;
+					@media (max-width:$md2+px){
+						height: 2px;
+					}
+					background-color:#11749e;
+					content: "";
+					transition: width 0.2s ease-out;
+				}
+				&:hover::after{
+					width: 75%;
+				}
+			}
+		}
+
+		&__menu-nav-link {
+			color: #ffffff;
+			font-family: "Myriad Pro Regular";
+			font-size: 20px;
+			margin-left: 48px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				margin-left: 24px;
+			}
+			@media (max-width:$md4+px){
+				margin-left: 10px;
+			}
+		}
+
+		&__menu-social {
+			display: flex;
+			justify-content: space-between;
+			&-link{
+				color: #f5f5f5;
+				font-size: 20px;
+				padding-left: 20px;
+				@media (max-width:$md2+px){
+					font-size: 10px;
+					padding-left: 10px;
+				}
+				@media (max-width:$md4+px){
+					padding-left: 5px;
+				}
+				&:hover{
+					color:#11749e;
+					transition: 0.2s;
+				}
+			}
+		}
+
+		&__menu-social-img {
+			
+		}
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-bottom: 100px;
+			@media (max-width:$md2+px){
+				padding-bottom: 50px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 10px;	
+			}
+		}
+
+		&__body-sroll {
+			@media (max-width:$md4+px){
+				max-width: 25px;
+			}
+		}
+
+		&__body-sroll-text {
+			color: #ffffff;
+			font-family: "Myriad Pro Regular";
+			font-size: 13px;
+			line-height: 22px;
+			text-align: center;
+			padding-bottom: 20px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				padding-bottom: 10px;
+			}
+			@media (max-width:$md4+px){
+				line-height: 10px;
+			}
+		}
+
+		&__body-sroll-arrow {
+			width: 25px;
+			&-border{
+				align-items: center;
+				height: 65px;
+				width: 65px;
+				padding:20px;
+				border: 2px solid #fff;
+				border-radius: 50%;
+				@media (max-width:$md2+px){
+					padding: 10px;
+					width: 40px;
+					height: 40px;
+				}
+				@media (max-width:$md4+px){
+					padding: 5px;
+					width: 25px;
+					height: 25px;
+				}
+			}
+				&-link{
+					font-size: 20px;
+					display: flex;
+					color: #fff;
+					&:hover{
+						color:#11749e;
+						transition: 0.2s;
+					}
+				}
+			}
+		
+		&__body-title{
+			color: #f5f5f5;
+			font-family: "Gotham-Bold";
+			font-size: 153px;
+			text-align: center;
+			text-transform: uppercase;
+			@media (max-width:$md2+px){
+				font-size: 75px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 40px;
+			}
+		}
+		&__body-subtitle{
+			color: #11749e;
+			font-family:'Gotham-Medium';
+			font-size: 25px;
+			font-weight: 500;
+			line-height: 51.19px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 7.88px;
+			padding-bottom: 100px;
+			@media (max-width:$md2+px){
+				font-size: 18px;
+				padding-bottom: 50px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 12px;
+				padding-bottom: 25px;
+				line-height: 20px;
+			}
+		}
+	}
+.fa-chevron-down{
+	@media (max-width:$md4+px){
+		font-size: 10px;
+		margin: auto;
+	}
+}
+	.awesome {
+		background-color: #11749e;
+		padding: 0 0 120px 0;
+		@media (max-width:$md2+px){
+			padding-bottom: 50px;
+		}
+		@media (max-width:$md4+px){
+				padding-bottom: 20px;
+		}
+		&__title {
+			padding: 100px 0 60px 0;
+			position: relative;
+			@media (max-width:$md2+px){
+				padding: 50px 0 30px 0;
+			}
+			@media (max-width:$md4+px){
+				padding: 10px 0px;
+			}
+		}
+
+		&__title-text {
+			position: absolute;
+			left: 24%;
+			@media (max-width:$md1+px){
+				left: 18%;
+			}
+			@media (max-width:$md2+px){
+				left: 30%;
+				font-size: 19px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 15px;
+				left:15% ;
+			}
+			top: 50%;
+			color: #ffffff;
+			font-family: "Gotham-Medium";
+			font-size: 38px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		&__title-back {
+			opacity: 0.18;
+			color: #ffffff;
+			font-family: "Roboto Condensed";
+			font-size: 247px;
+			text-align: center;
+			text-transform: uppercase;
+			@media (max-width:$md2+px){
+				font-size: 120px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 60px;
+			}
+		}
+
+		&__body {
+		}
+
+		&__body-row {
+			display: flex;
+			justify-content: space-between;
+			@media (max-width:$md4+px){
+				flex-wrap: wrap;
+			}
+		}
+
+		&__body-row-column {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 25%;
+			@media (max-width:$md4+px){
+				flex: 0 0 50%;
+			}
+		}
+
+		&__body-row-column-img {
+			justify-content: center;
+			display: flex;
+			width: 133px;
+			height: 133px;
+			background-color: #2e85aa;
+			border-radius: 50%;
+			text-align: center;
+			margin-bottom: 20px;
+			@media (max-width:$md2+px){
+				width: 75px;
+				height: 75px;
+				margin-bottom: 10px;
+			}
+			@media (max-width:$md4+px){
+				width: 50px;
+				height: 50px;
+			}
+		}
+
+		&__body-row-column-img-icon {
+			font-size: 34px;
+			color: #fff;
+			margin: auto;
+			@media (max-width:$md2+px){
+				font-size: 18px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 15px;
+			}
+		}
+
+		&__body-row-column-title {
+			color: #ffffff;
+			font-family: "Gotham-Medium";
+			font-size: 18px;
+			line-height: 36px;
+			text-align: center;
+			text-transform: uppercase;
+			padding-bottom: 30px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				line-height: 20px;
+				padding-bottom: 15px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 5px;
+				line-height: 10px;
+			}
+		}
+
+		&__body-row-column-text {
+			color: #ffffff;
+			font-family: "Gotham-Book";
+			font-size: 15px;
+			line-height: 24px;
+			text-align:left ;
+			max-width: 259px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				line-height: 12px;
+				max-width: 150px;
+				padding-left: 5px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 10px;
+				max-width: 150px;
+				padding-bottom: 10px;
+			}
+		}
+}
+// html {
+// 	scroll-behavior: smooth; медленная прокрутка страницы
+// }
+.akita {
+	&__top {
+	}
+	&__top-back {
+		background: #222222;
+		position: relative;
+	}
+	&__top-back-body {
+		padding: 80px 0 0 0;
+		@media (max-width:$md2+px){
+			padding: 40px 0 0 0;
+			max-width: 350px;
+		}
+		@media (max-width:$md4+px){
+			padding-top: 20px;
+		}
+		max-height: 474px;
+		max-width: 469px;
+		line-height: 20px;
+		padding-right: 5px;
+		color: #fff;
+		&-date{
+			font-family: "Gotham-Book";
+			font-size: 13px;
+			line-height: 24px;
+			padding-bottom: 15px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 10px;
+			}
+		}
+		&-title{
+			font-family: "Gotham-Medium";
+			font-size: 25px;
+			text-transform: uppercase;
+			padding-bottom: 40px;
+			@media (max-width:$md2+px){
+				padding-bottom: 20px;
+				font-size: 19px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 10px;
+				font-size: 15px;
+			}
+		}
+		&-text{
+			font-family: "Gotham-Book";
+			font-size: 15px;
+			line-height: 24px;
+			padding-bottom:103px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				padding-bottom: 50px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 25px;
+			}
+		}
+	}
+	&__top-back-img {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		@media (max-width:$md4+px){
+				position: relative;
+				left: 0;
+		}
+	}
+	img{
+		width: 100%;
+		min-height: 474px;
+		@media (max-width:$md2+px){
+			min-height: 337px;
+		}
+		@media (max-width:$md4+px){
+			min-height: 277px;
+		}
+	}
+
+	&__bottom {
+		background: #f3f3f3;
+		height: 474px;
+		@media (max-width:$md2+px){
+			height: 337px;
+		}
+		@media (max-width:$md4+px){
+			height: 554px;
+		}
+	}
+	&__bottom-back {
+		position: relative;
+	}
+	&__bottom-back-body {
+		padding: 80px 0 0 0;
+		@media (max-width:$md1+px){
+			max-width: 450px;
+		}
+		@media (max-width:$md2+px){
+			padding: 40px 0 0 10px;
+			max-width: 350px;
+		}
+		position: absolute;
+		top: 0;
+		left: 50%;
+		@media (max-width:$md4+px){
+			position: relative;
+			left: 0;
+			padding-top: 20px;
+	}
+		max-height: 474px;
+		max-width: 550px;
+		line-height: 20px;
+		color: #222222;
+		padding-left: 70px;
+		&-date {
+			padding-bottom: 15px;
+			font-family: "Gotham-Book";
+			font-size: 13px;
+			line-height: 24px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 10px;
+			}
+		}
+		&-title {
+			padding-bottom: 40px;
+			font-family: "Gotham-Medium";
+			font-size: 25px;
+			text-transform: uppercase;
+			@media (max-width:$md2+px){
+				padding-bottom: 20px;
+				font-size: 19px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 10px;
+				font-size: 15px;
+			}
+		}
+		&-text {
+			padding-bottom: 103px;
+			font-family: "Gotham-Book";
+			font-size: 15px;
+			line-height: 24px;
+			@media (max-width:$md2+px){
+				font-size: 10px;
+				padding-bottom: 50px;
+			}
+			@media (max-width:$md4+px){
+				padding-bottom: 25px;
+			}
+		}
+	}
+	&__bottom-back-img {
+		position: absolute;
+		top: 0;
+		right: 50%;
+		@media (max-width:$md4+px){
+			position: absolute;
+			right:0;
+			top: 100%;
+	}
+	}
+}
+.blog {
+
+	&__top {
+		color: #222222;
+		position: relative;
+		padding-bottom: 70px;
+		@media (max-width:$md2+px){
+			padding-bottom: 35px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 10px;
+		}
+	}
+
+	&__top-title {
+		font-size: 38px;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: "Gotham-Medium";
+		position: absolute;
+		top: 43%;
+		left: 40%;
+		@media (max-width:$md2+px){
+			font-size: 19px;
+			left: 42%;
+		}
+		@media (max-width:$md4+px){
+			font-size: 15px;
+			top: 35%;
+			left: 37%;
+		}
+	}
+
+	&__top-back {
+		opacity: 0.18;
+		font-family: "Roboto Condensed";
+		font-size: 247px;
+		text-align: center;
+		text-transform: uppercase;
+		padding-top:80px ;
+		@media (max-width:$md2+px){
+			font-size: 120px;
+			padding-top: 40px;
+		}
+		@media (max-width:$md4+px){
+			padding-top: 10px;
+			font-size: 60px;
+		}
+	}
+
+	&__top-text {
+		font-family: "Gotham-Book";
+		font-size: 30px;
+		text-align: center;
+		@media (max-width:$md2+px){
+			font-size: 20px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 12px;
+		}
+	}
+
+	&__body {
+		padding-bottom: 100px;
+		@media (max-width:$md2+px){
+			padding-bottom: 50px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 10px;
+		}
+	}
+
+	&__body-row {
+	}
+
+	&__body-columns {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$md4+px){
+			display: block;
+		}
+	}
+
+	&__body-column {
+		flex: 0 0 25%;
+		max-width: 270px;
+		@media (max-width:$md1+px){
+			max-width: 230px;
+		}
+		@media (max-width:$md2+px){
+			max-width: 180px;
+		}
+		@media (max-width:$md4+px){
+			max-width: 350px;
+		}
+	}
+
+	&__body-column-img {
+		padding-bottom: 40px;
+		@media (max-width:$md2+px){
+			padding-bottom: 20px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 10px;
+		}
+		img{
+			@media (max-width:$md1+px){
+				max-width: 230px;
+			}
+			@media (max-width:$md2+px){
+				max-width: 180px;
+			}
+			@media (max-width:$md4+px){
+				min-width: 350px;
+			}
+		}
+	}
+
+	&__body-column-title {
+		color: #11749e;
+		font-size: 18px;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: "Gotham-Medium";
+		padding-bottom: 25px;
+		@media (max-width:$md2+px){
+			font-size: 15px;
+			padding-bottom: 15px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 10px;
+			padding-bottom: 10px;
+		}
+	}
+
+	&__body-column-text {
+		color: #222222;
+		font-family: "Gotham-Book";
+		font-size: 15px;
+		text-align: center;
+		@media (max-width:$md2+px){
+			font-size: 12px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 20px;
+		}
+	}
+}
+.blue {
+	background-color: #11749e;
+
+	&__row {
+	}
+
+	&__columns {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$md4+px){
+			display: block;
+		}
+	}
+
+	&__column {
+		padding: 115px 0 115px 0;
+		display: flex;
+		color: #ffffff;
+		flex: 0 0 50%;
+		@media (max-width:$md2+px){
+			padding: 60px 10px 60px 0;
+		}
+		@media (max-width:$md4+px){
+			padding: 20px 5px 20px 0;
+		}
+	}
+
+	&__column-icon {
+		font-size: 69px;
+		padding-right: 34px;
+		@media (max-width:$md2+px){
+			font-size: 40px;
+			padding-right: 25px;
+		}
+	}
+
+	&__column-text {
+		font-size: 15px;
+		font-family: "Gotham-Book";
+		line-height: 20px;
+		max-width: 449px;
+		@media (max-width:$md2+px){
+			font-size: 12px;
+			min-width: 250px;
+		}
+	}
+}
+
+.mobile {
+
+	&__wrapper {
+		background: url(../Img/mobile/01.jpg) no-repeat;
+		background-size: cover;
+	}
+	&__container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__body {
+		padding-right: 10px;
+	}
+
+	&__body-title {
+		color: #ffffff;
+		font-family: "Gotham-Medium";
+		font-size: 25px;
+		text-transform: uppercase;
+		padding-bottom: 40px;
+		padding-top: 10px;
+		@media (max-width:$md2+px){
+			font-size: 19px;
+			padding-bottom: 20px;
+		}
+	}
+
+	&__body-text {
+		color: #ffffff;
+		font-family: "Gotham-Book";
+		font-size: 15px;
+		line-height: 24px;
+		padding-bottom: 60px;
+		@media (max-width:$md2+px){
+			font-size: 10px;
+			line-height: 15px;
+			padding-bottom: 30px;
+		}
+	}
+
+	&__body-button {
+		display: flex;
+		flex-direction: column;
+		
+		button{
+			color: #ffffff;
+			font-family: "Gotham-Medium";
+			font-size: 15px;
+			text-transform: uppercase;
+			background-color: #11749e;
+			padding: 13px;
+			margin-bottom: 25px;
+			text-align: left;
+			border-radius: 3px;
+			transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			&:hover{
+				transform: translate(15px);
+			}
+			@media (max-width:$md2+px){
+				font-size: 10px;
+			}
+		}
+	}
+	&__body-button-link {
+		&-1{
+			button{
+				min-width:370px ;
+				@media (max-width:$md2+px){
+					min-width:270px ;
+				}
+			}
+		}
+		&-2{
+			button{
+				min-width:400px ;
+				@media (max-width:$md2+px){
+					min-width:300px ;
+				}
+			}
+		}
+		&-3{
+			button{
+				min-width:430px ;
+				@media (max-width:$md2+px){
+					min-width:330px ;
+				}
+			}
+		}
+	}
+
+	&__img {
+		padding:95px 0;
+		@media (max-width:$md2+px){
+			padding: 50px 0;
+			img{
+				max-width: 300px;
+			}
+		}
+		@media (max-width:$md2+px){
+			img{
+				display: none;
+			}
+		}
+	}
+}
+.team {
+
+	&__top {
+		text-align: center;
+		color: #222222;
+		position: relative;
+		padding: 45px 0 60px 0;
+		@media (max-width:$md2+px){
+			padding: 25px 0 30px 0;
+		}
+		@media (max-width:$md4+px){
+			padding: 10px 0 15px 0;
+		}
+	}
+
+	&__top-title {
+		font-size: 38px;
+		text-transform: uppercase;
+		font-family: "Gotham-Medium";
+		position: absolute;
+		top: 40%;
+		left: 41%;
+		@media (max-width:$md2+px){
+			font-size: 19px;
+			left: 43%;
+		}
+		@media (max-width:$md4+px){
+			font-size: 15px;
+			left: 39%;
+			top: 38%;
+		}
+	}
+
+	&__top-back {
+		opacity: 0.18;
+		font-family: "Roboto Condensed";
+		font-size: 247px;
+		text-transform: uppercase;
+		@media (max-width:$md2+px){
+			font-size: 120px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 60px;
+		}
+	}
+
+	&__top-text {
+		font-size: 30px;
+		font-family: "Gotham-Book";
+		@media (max-width:$md2+px){
+			font-size: 15px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 12px;
+		}
+	}
+
+	&__body {
+	}
+
+	&__body-row {
+		padding-bottom: 80px;
+		@media (max-width:$md2+px){
+			padding-bottom: 40px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 0;
+		}
+	}
+
+	&__body-row-columns {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:$md4+px){
+			display: block;
+		}
+	}
+
+	&__body-row-column {
+		flex: 0 0 25%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+		@media (max-width:$md4+px){
+			padding-bottom: 50px;
+		}
+	}
+
+	&__body-row-column-img {
+		img{
+			@media (max-width:$md1+px){
+				max-width: 200px;
+			}
+			@media (max-width:$md1+px){
+				max-width: 150px;
+			}
+			@media (max-width:$md4+px){
+				max-width: 300px;
+			}
+		}
+	}
+
+	&__body-row-column-text {
+		font-family: "Gotham-Medium";
+		text-align: center;
+		max-width:216px ;
+		position: absolute;
+		top: 90%;
+		background-color: #fff;
+		padding: 20px;
+		@media (max-width:$md2+px){
+			padding: 10px;
+		}
+		@media (max-width:$md4+px){
+			top: 80%;
+		}
+	}
+
+	&__body-row-column-text-name {
+		color: #11749e;
+		font-size: 20px;
+		text-transform: uppercase;
+		padding-bottom: 10px;
+		@media (max-width:$md2+px){
+			font-size: 15px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 20px;
+		}
+	}
+
+	&__body-row-column-text-prof {
+		color: #000000;
+		font-size: 15px;
+		@media (max-width:$md2+px){
+			font-size: 12px;
+		}
+		@media (max-width:$md4+px){
+			font-size: 15px;
+		}
+	}
+}
+.review {
+	background: url(../Img/table/01.jpg)no-repeat;
+	background-size: cover;
+
+	&__top {
+		color: #ffffff;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+		padding: 100px 0 70px 0;
+		@media (max-width:$md2+px){
+			padding: 50px 0 35px 0;
+		}
+		@media (max-width:$md4+px){
+			padding: 25px 0 20px 0;
+		}
+	}
+
+	&__top-title {
+		font-size: 37px;
+		font-family: "Gotham-Medium";
+		position: absolute;
+		top: 50%;
+		left: 15%;
+		@media (max-width:$md1+px){
+			left: 10%;
+		}
+		@media (max-width:$md2+px){
+			font-size: 19px;
+		}
+	}
+
+	&__top-back {
+		opacity: 0.18;
+		font-family: "Roboto Condensed";
+		font-size: 247px;
+		@media (max-width:$md2+px){
+			font-size: 120px;
+		}
+
+	}
+
+	&__body {
+		
+	}
+}
+.form {
+	&__person {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 30px;
+		@media (max-width:$md4+px){
+			display: block;
+		}
+		input{
+			color: #fff;
+			flex: 0 0 31%;
+			border: 1px solid #ffffff;
+			background-color:rgba( 0,0,0,.1);
+			font-family: "Gotham-Book";
+			font-size: 15px;
+			padding: 10px;
+			@media (max-width:$md4+px){
+				width: 100%;
+				margin: 5px;
+			}
+		}
+	}
+
+	&__textarea {
+		padding-bottom: 30px;
+		textarea{
+			color: #fff;
+			border: 1px solid #ffffff;
+			background-color:rgba( 0,0,0,.1);
+			font-family: "Gotham-Book";
+			font-size: 15px;
+			width: 100%;
+			height: 25vh;
+			padding: 10px;
+			@media (max-width:$md4+px){
+				margin: 5px;
+			}
+		}
+	}
+
+	&__button {
+		padding-bottom: 100px;
+		@media (max-width:$md2+px){
+			padding-bottom: 50px;
+		}
+		@media (max-width:$md4+px){
+			padding-bottom: 25px;
+		}
+		&-btn{
+			display: flex;
+			justify-content: center;
+		}
+		button{
+			background-color: #11749e;
+			color: #ffffff;
+			font-family: "Gotham-Medium";
+			font-size: 24px;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 20px 60px;
+			border-radius: 3px;
+			@media (max-width:$md2+px){
+				font-size: 19px;
+				padding: 15px 30px;
+			}
+			@media (max-width:$md4+px){
+				font-size: 15px;
+				padding: 10px 20px;
+			}
+			&:hover{
+				background-color: #fff;
+				color:#11749e ;
+			}
+		}
+	}
+}
+#map{
+	width: 100%;
+	height: 500px;
+}
+.footer {
+	background-color: #222222;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		padding: 30px 0px;
+		@media (max-width:$md4+px){
+			display: block;
+		}
+	}
+
+	&__body-right {
+		color: #fff;
+	}
+
+	&__body-left {
+	}
+}
